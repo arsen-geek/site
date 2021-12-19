@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Статистика {% endblock %}
+
+{% block content %} <p>Информация на основании ответов {{ total }} респондентов: </p>
+    <p>Самый старший респондент: {{ all_info['birth_min'] }}</p>
+    <p>Самый молодой респондент: {{ all_info['birth_max'] }}</p>
+    <p>Средний год рождения: {{ all_info['birth_mean'] }}</p>
+
+    <p><i>Оценка слова "сколопендра"</i></p>
+    <p>1) Понятность: <b>{{ all_info['understand_mean'] }}</b></p>
+
+    <p>2) Смешность: <b>{{ all_info['funny_mean'] }}</b></p>
+
+    <p>3) Частотность: <b>{{ all_info['frequent_mean'] }}</b></p>
+
+{% endblock %}

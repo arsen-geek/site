@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %} Опрос {% endblock %}
+
+{% block content %}
+    <form action="/questionnaire" method = 'GET'>
+    <fieldset>
+        <legend><b>Смешные слова</b></legend>
+    <p>Наша команда изучает, какие факторы делают слова смешными.
+</p>
+    Согласны ли вы пройти опрос?<br>
+    <input type="radio" name="ask" value="yes" checked>Да<br>
+    <p><input type="submit" value="Отправить"></p>
+    </fieldset>
+</form>
+<p><a href='/questionnaire'>Ссылка на опрос</a></p>
+{% endblock %}

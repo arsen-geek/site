@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Исследование смешных слов{% endblock %}
+
+{% block content %}
+<form action="/process">
+    <fieldset>
+	<legend><b>О вас.</b></legend><br>
+        Ваш год рождения (только число: 1984, 2002, ...)<br>
+	<input type="text" name="birth" required pattern='\d+'><br>
+	Ваш гендер.<br>
+	<input type="radio" name="gender" value="male"> Мужчина<br>
+    <input type="radio" name="gender" value="female"> Женщина<br>
+    <input type="radio" name="gender" value="other" checked> Другое<br><br>
+
+	<br>
+
+	<legend><b>Оцените слово "сколопендра" по следующим критериям:</b></legend>
+    Насколько оно понятное? <br>
+        <input type="radio" name="understand" value="1">1 (совсем не понятное)<br>
+        <input type="radio" name="understand" value="2">2<br>
+        <input type="radio" name="understand" value="3">3<br>
+        <input type="radio" name="understand" value="4">4<br>
+        <input type="radio" name="understand" value="5">5 (очень понятное)<br><br>
+	
+    Насколько оно смешное? <br>
+        <input type="radio" name="funny" value="1">1 (совсем не смешное<br>
+        <input type="radio" name="funny" value="2">2<br>
+        <input type="radio" name="funny" value="3">3<br>
+        <input type="radio" name="funny" value="4">4<br>
+        <input type="radio" name="funny" value="5">5 (очень смешное)<br><br>
+
+	Насколько часто его используют? <br>
+        <input type="radio" name="proudness" value="1">1 (крайне редко)<br>
+        <input type="radio" name="proudness" value="2">2<br>
+	    <input type="radio" name="proudness" value="3">3<br>
+        <input type="radio" name="proudness" value="4">4<br>
+	    <input type="radio" name="proudness" value="5">5 (очень часто)<br>
+	<br>
+	
+    <input type="submit" name="submit" value="Отправить">
+    </fieldset>
+</form>
+<p><a href='/statistics'>Посмотреть статистику</a></p>
+{% endblock %}
